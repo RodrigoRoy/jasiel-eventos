@@ -1,29 +1,32 @@
-# lais-fotografia
+# Proyecto de administración de eventos
 
-## Project setup
+Proyecto para organizar la distribución de personas en eventos al interior de un salón. Se tiene un sistema de usuarios, formularios de captura de la información, visualización del espacio y permite generar boletos con código QR.
+
+## Requisitos de Instalación
+
+- [NodeJS](https://nodejs.org) (version LTS)
+- [MongoDB](https://www.mongodb.org/) (Community Server)
+
+## Instalar dependencias
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Crear archivo "config.js" en directorio raíz con el siguiente contenido y cambiar los nombres de la base de datos y la frase secreta para usar en la creación de tokens:
 ```
-npm run serve
+module.exports = {
+  dbname_dev: 'nombre-basedatos-desarrollo',
+  dbname_prod: 'nombre-basedatos-produccion',
+  token_dev: 'frase-secreta-desarrollo',
+  token_prod: 'frase-secreta-produccion',
+};
 ```
-
-### Compiles and minifies for production
+### Compilar y minificar para producción
 ```
 npm run build
 ```
 
-### Run your tests
+### Compilar proyecto y ejecutar ambiente de desarrollo
 ```
-npm run test
+npm run dev
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

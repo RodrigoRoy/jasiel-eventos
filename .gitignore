@@ -19,3 +19,9 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Production server files
+prod-server
+
+# Configuracion file
+config.js
