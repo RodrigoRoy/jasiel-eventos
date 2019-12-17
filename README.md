@@ -12,7 +12,8 @@ Proyecto para organizar la distribución de personas en eventos al interior de u
 npm install
 ```
 
-## Crear archivo "config.js" en directorio raíz con el siguiente contenido y cambiar los nombres de la base de datos y la frase secreta para usar en la creación de tokens:
+Crear archivo "config.js" en directorio raíz con el siguiente contenido y cambiar los nombres de la base de datos y la frase secreta para usar en la creación de tokens:
+
 ```
 module.exports = {
   dbname_dev: 'nombre-basedatos-desarrollo',
