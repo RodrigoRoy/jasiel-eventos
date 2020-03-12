@@ -26,7 +26,7 @@
 export default {
   name: 'home',
   beforeCreate: function(){
-    fetch(this.$store.state.apiUrl + '/api/user', {method: 'GET'})
+    fetch(this.$store.state.apiUrl + '/user', {method: 'GET'})
   }
 };
 </script>

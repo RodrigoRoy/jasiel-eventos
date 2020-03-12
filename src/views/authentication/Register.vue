@@ -22,7 +22,7 @@ export default{
       password: '',
       first: '',
       last: '',
-      admin: '',
+      admin: false,
       valid: true,
       show1: false,
       show2: false,
@@ -52,7 +52,6 @@ export default{
         email: this.email,
         admin: this.admin,
       };
-      // console.log('user', user);
       const registerPromise = auth.registerUser(user);
       const loginPromise = auth.login(user);
       await Promise.all([registerPromise, loginPromise]);

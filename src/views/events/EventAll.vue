@@ -24,13 +24,24 @@
             <v-btn icon v-on:click.prevent="editEvent(event._id)">
               <v-icon>mdi-pencil</v-icon>
             </v-btn>
-            <v-btn icon v-on:click.prevent="deleteEvent(event._id)">
+            <v-btn icon @click="openDialogDelete(event)">
               <v-icon>mdi-delete</v-icon>
             </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
+    <v-dialog v-model="dialogDelete" max-width="350" v-if="currentEvent">
+      <v-card>
+        <v-card-title class="headline">Borrar evento</v-card-title>
+        <v-card-text>¿Estás seguro de borrar el evento "{{ currentEvent.name }}"?</v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn text @click="confirmDelete()">Aceptar</v-btn>
+          <v-btn text @click="dialogDelete = false">Cancelar</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -45,7 +56,8 @@ export default{
   data: function(){
     return {
       events: null,
-      currentEventId: null,
+      dialogDelete: false,
+      currentEvent: undefined,
     }
   },
   beforeRouteEnter(to, from, next){
@@ -67,6 +79,15 @@ export default{
     },
     editEvent: function(eventId){
       this.$router.push({name: 'event-edit', params: {id: eventId}});
+    },
+    openDialogDelete: function(evento){
+      this.dialogDelete = true;
+      this.currentEvent = evento;
+    },
+    confirmDelete: async function(){
+      this.dialogDelete = false;
+      await this.deleteEvent(this.currentEvent._id);
+      this.currentEvent = undefined;
     },
     deleteEvent: async function(eventId){
       // const registerPromise = auth.registerUser(user);

@@ -3,7 +3,7 @@
     <v-list-item>
       <v-list-item-content>
         <div class="overline mb-4">
-          {{ evento.place }} - {{ evento.date }}
+          {{ evento.place }} - {{ evento.fecha }}
         </div>
         <v-list-item-title class="headline mb-1">
           {{ evento.name }}
@@ -14,17 +14,22 @@
       </v-list-item-content>
     </v-list-item>
     <v-card-actions>
-      <v-btn text v-on:click.prevent="createPDF()">PDF document</v-btn>
-      <v-btn text v-on:click.prevent="backToEvents()">Regresar</v-btn>
+      <v-btn icon v-on:click.prevent="backToEvents()">
+        <v-icon>mdi-keyboard-return</v-icon>
+      </v-btn>
+      <v-btn icon v-on:click.prevent="createPDF()">
+        <v-icon>mdi-file-pdf</v-icon>
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
 import * as eventService from '../../services/EventService'
-// import moment from 'moment'
+import moment from 'moment'
 import QRCode from 'qrcode'
 
+moment.locale('es'); // Configuración local español para fechas
 var pdfMake = require('pdfmake/build/pdfmake.js');
 var pdfFonts = require('pdfmake/build/vfs_fonts.js');
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -47,6 +52,7 @@ export default{
         next(vm => {
           const evento = res.data.event;
           // (aquí cualquier edición)
+          evento.fecha = moment(evento.date).format('LL');
           vm.evento = evento;
         });
       }

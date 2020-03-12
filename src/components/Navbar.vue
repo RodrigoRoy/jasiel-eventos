@@ -10,7 +10,7 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="headline">
-        Proyecto
+        Eventos
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <!-- <v-btn icon>
@@ -38,7 +38,7 @@
           </v-list-item>
           <v-list-item v-if="!$store.state.isLoggedIn">
             <v-list-item-title>
-              <router-link to="/login" class="nav-link" exact>Login</router-link>
+              <router-link to="/login" class="nav-link" exact>Iniciar sesión</router-link>
             </v-list-item-title>
           </v-list-item>
           <v-list-item v-if="$store.state.isLoggedIn">
@@ -110,6 +110,13 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <!-- <template v-slot:append>
+        <div class="pa-2">
+          <v-btn block :to="{name: 'registrar'}" slot="action">Registrar</v-btn>
+          <v-btn block :to="{name: 'login'}">Iniciar sesión</v-btn>
+          <v-btn block>Cerrar sesión</v-btn>
+        </div>
+      </template> -->
     </v-navigation-drawer>
   </header>
 </template>

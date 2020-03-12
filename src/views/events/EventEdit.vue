@@ -109,22 +109,6 @@ export default{
       // ];
     },
     draw: function(sketch){
-      // sketch.createCanvas(800, 800);
-      const tableSize = 50;
-      const chairsPerTable = 10;
-      const chairSize = 20;
-      const totalTables = this.evento.amount / 10;
-      const totalRows = totalTables / 4;
-      const horizontalSpacing = sketch.width / 5;
-      const verticalSpacing = sketch.height / totalRows; // size + spacing
-      const marginSpacing = 80;
-      for(let i = 0; i < 5; i++){
-        for(let j = 0; j < totalRows; j++){
-          if(i != 2)
-            this.evento.layout.push(new Table(i*horizontalSpacing + marginSpacing, j*verticalSpacing + marginSpacing, tableSize, chairsPerTable, chairSize));
-        }
-      }
-
       sketch.stroke(0);
       sketch.background(200);
       for(let table of this.evento.layout){
