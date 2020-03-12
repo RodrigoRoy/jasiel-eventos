@@ -55,7 +55,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
-            Application
+            Eventos
           </v-list-item-title>
           <v-list-item-subtitle>
             {{this.$store.state.username ? this.$store.state.username : 'User'}}
@@ -83,7 +83,7 @@
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>
-              <router-link to="/eventos" exact>Eventos</router-link>
+              <router-link to="/eventos" exact>Ver todos</router-link>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -94,7 +94,7 @@
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>
-              <router-link to="/evento/nuevo" exact>Nuevo</router-link>
+              <router-link to="/evento/nuevo" exact>Crear nuevo</router-link>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -135,3 +135,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.v-application a {
+  color: inherit;
+  text-decoration: none;
+}
+</style>

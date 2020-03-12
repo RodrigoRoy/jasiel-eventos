@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Login from './views/authentication/Login.vue'
 import Register from './views/authentication/Register.vue'
 import EventCreate from './views/events/EventCreate.vue'
+import EventEdit from './views/events/EventEdit.vue'
 import EventAll from './views/events/EventAll.vue'
 import EventView from './views/events/EventView.vue'
 import * as auth from './services/AuthService'
@@ -70,10 +71,10 @@ const routes = new Router({
       //   }
       // }
     },
-    // {
-      // path: '/evento/:id/edit',
-      // name: 'event-edit',
-      // component: EventEdit,
+    {
+      path: '/evento/:id/edit',
+      name: 'event-edit',
+      component: EventEdit,
       // beforeEnter: (to, from, next) => {
       //   if(!auth.isLoggedIn()){
       //     next();
@@ -82,7 +83,7 @@ const routes = new Router({
       //     next('/');
       //   }
       // }
-    // },
+    },
     {
       path: '/evento/:id',
       name: 'event-view',
