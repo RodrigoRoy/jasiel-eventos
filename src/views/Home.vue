@@ -2,23 +2,22 @@
   <!-- <h1>This is the home page</h1> -->
   <v-card class="mx-auto" max-width="700" >
     <v-card-text>
-      <div>Donec dictum posuere</div>
+      <div>Iniciativa de software libre</div>
       <p class="display-1 text--primary">
-        Lorem ipsum
+        Proyecto gestor de eventos
       </p>
-      <p>Sed sed venenatis enim</p>
+      <p>Para salón de fiestas</p>
       <div class="text--primary">
-        Pellentesque molestie et ipsum in aliquet. Vestibulum tincidunt consectetur hendrerit.<br>
-        Fusce hendrerit posuere leo vitae convallis.<br>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. <br>
-        Donec est massa, viverra in ullamcorper ut, facilisis vel ex
+        El presente proyecto da cuenta del uso de software para la administración y gestión de labores relacionadas a un salón de fiestas donde se organizan diversos eventos.<br>
+        En específico, el proyecto administra los usuarios y personas que se registran para obtener un lugar en el espacio disponible.<br>
+        Así también se encarga de la generación de boletos identificadores mediante el uso de códigos QR y la interfaz para regular e identificar el proceso de entrada de los invitados.
       </div>
     </v-card-text>
-    <v-card-actions>
-      <v-btn text color="deep-purple accent-4" >
-        Learn More
+    <!-- <v-card-actions>
+      <v-btn text color="primary" >
+        Ver eventos
       </v-btn>
-    </v-card-actions>
+    </v-card-actions> -->
   </v-card>
 </template>
 

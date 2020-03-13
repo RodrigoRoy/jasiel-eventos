@@ -10,7 +10,8 @@ export default new Vuex.Store({
     // apiUrl: 'http://localhost:3000/api',
     apiUrl: `${window.location.protocol}//${window.location.hostname}:3000/api`,
     username: null,
-    userId: null
+    userId: null,
+    isAdmin: false,
   },
   mutations: {
     authenticate(state){
@@ -18,10 +19,12 @@ export default new Vuex.Store({
       if(state.isLoggedIn){
         state.username = auth.getUsername();
         state.userId = auth.getUserId();
+        state.isAdmin = auth.getUserAdmin();
       }
       else{
         state.username = null;
         state.userId = null;
+        state.isAdmin = false;
       }
     }
   },

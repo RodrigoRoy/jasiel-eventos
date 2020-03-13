@@ -42,6 +42,14 @@ export function getUsername(){
   return token.user.username;
 }
 
+export function getUserAdmin(){
+  const token = decodeToken();
+  if(!token){
+    return null;
+  }
+  return token.user.admin;
+}
+
 export function getUserId(){
   const token = decodeToken();
   if(!token){

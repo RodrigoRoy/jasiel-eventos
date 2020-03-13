@@ -62,34 +62,34 @@ const routes = new Router({
       path: '/evento/nuevo',
       name: 'event-new',
       component: EventCreate,
-      // beforeEnter: (to, from, next) => {
-      //   if(!auth.isLoggedIn()){
-      //     next();
-      //   }
-      //   else {
-      //     next('/');
-      //   }
-      // }
+      beforeEnter: (to, from, next) => {
+        if(auth.isLoggedIn()){
+          next();
+        }
+        else {
+          next('/');
+        }
+      }
     },
     {
       path: '/evento/:id/edit',
       name: 'event-edit',
       component: EventEdit,
-      // beforeEnter: (to, from, next) => {
-      //   if(!auth.isLoggedIn()){
-      //     next();
-      //   }
-      //   else {
-      //     next('/');
-      //   }
-      // }
+      beforeEnter: (to, from, next) => {
+        if(auth.isLoggedIn()){
+          next();
+        }
+        else {
+          next('/');
+        }
+      }
     },
     {
       path: '/evento/:id',
       name: 'event-view',
       component: EventView,
       // beforeEnter: (to, from, next) => {
-      //   if(!auth.isLoggedIn()){
+      //   if(auth.isLoggedIn()){
       //     next();
       //   }
       //   else {
@@ -102,7 +102,7 @@ const routes = new Router({
       name: 'eventos',
       component: EventAll,
       // beforeEnter: (to, from, next) => {
-      //   if(!auth.isLoggedIn()){
+      //   if(auth.isLoggedIn()){
       //     next();
       //   }
       //   else {

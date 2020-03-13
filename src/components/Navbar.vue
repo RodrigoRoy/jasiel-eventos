@@ -51,7 +51,7 @@
       </v-menu>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-navigation-drawer v-model="drawer" absolute temporary color="secondary" dark>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
@@ -66,7 +66,7 @@
       <v-divider></v-divider>
 
       <v-list dense nav>
-        <v-list-item link >
+        <v-list-item link>
           <v-list-item-icon>
             <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
