@@ -16,7 +16,7 @@ const eventSchema = new mongoose.Schema({
     }]
   }],
   place: {type: String, enum: ['Salón La Olla', 'Salón La Joya']}, // Nombre del lugar
-  amount: {type: Number, default: 150, enum: [150, 200, 250, 300, 350, 400, 450, 500]},
+  amount: {type: Number, default: 100, enum: [100, 150, 200, 250, 300, 350, 400, 450, 500]},
   date: {type: Date, default: Date.now}, // Fecha del evento
   people: [{ // Lista de personas invitadas
     name: String,
