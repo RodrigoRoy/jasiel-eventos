@@ -11,7 +11,7 @@
     <v-select v-model="evento.place" :rules="rules.place" :items="['Salón La Joya', 'Salón La Olla']" label="Lugar" required></v-select>
     <v-slider v-model="evento.amount" :disabled="!evento.place" :min="evento.place == 'Salón La Joya' ? 100 : 250" :max="evento.place == 'Salón La Joya' ? 250 : 500" step="50" thumb-label="always" ticks="always" tick-size="4" label="Capacidad" class="mt-6 mb-4"></v-slider>
 
-    <v-btn type="submit" :disabled="!valid" color="primary" class="mr-4" @click="validate"> Registrar </v-btn>
+    <v-btn type="submit" :disabled="!valid" color="primary" class="mr-4"> Registrar </v-btn>
 
   </v-form>
 </template>
@@ -56,10 +56,9 @@ export default{
     addPerson: function(){
       this.evento.people.push({name: '', limit: 0});
     },
-    validate: function(){
-      this.$refs.formulario.validate()
-    },
     onSubmit: async function(){
+      if(!this.$refs.formulario.validate()) // Se activa validación del formulario
+        return;
       const request = {
         event: this.evento
       };
